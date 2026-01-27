@@ -53,6 +53,7 @@ build/
 Build/
 bin/
 Bin/
+_codeql_build_dir/
 
 # IDE files
 .vscode/
