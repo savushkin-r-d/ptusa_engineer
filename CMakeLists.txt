@@ -28,3 +28,12 @@ enable_testing()
 
 # Add test subdirectory
 add_subdirectory(tests)
+
+# Add example executable
+add_executable(visualization_example
+    examples/visualization_example.cpp
+)
+
+target_link_libraries(visualization_example
+    ptusa_engineer_lib
+)

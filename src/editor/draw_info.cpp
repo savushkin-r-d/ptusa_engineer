@@ -102,6 +102,11 @@ std::vector<DrawInfo> DrawInfo::FilterByActions(const std::vector<DrawInfo>& dra
     for (const auto& pair : groups) {
         const auto& group = pair.second;
         
+        // Пропускаем пустые группы
+        if (group.empty()) {
+            continue;
+        }
+        
         // Собираем все стили и действия в группе
         std::vector<Style> styles;
         std::vector<ActionType> actions;

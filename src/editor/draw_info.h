@@ -42,6 +42,14 @@ public:
      * 
      * Bitwise flags for intersections. If the bitwise AND result is 0,
      * then the action intersection is invalid.
+     * 
+     * Example of conflicts (bitwise AND = 0):
+     *   ON_DEVICE (0b0001) & OFF_DEVICE (0b0010) = 0b0000 (conflict!)
+     *   ON_DEVICE (0b0001) & DELAYED_ON_DEVICE (0b0110) = 0b0000 (conflict!)
+     * 
+     * Example of compatible actions (bitwise AND != 0):
+     *   OTHER (0b1111) & ON_DEVICE (0b0001) = 0b0001 (compatible)
+     *   DELAYED_ON_DEVICE (0b0110) & DELAYED_OFF_DEVICE (0b0101) = 0b0100 (compatible)
      */
     enum class ActionType {
         OTHER = 0b1111,              ///< Другое действие
